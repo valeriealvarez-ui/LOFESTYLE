@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* 1. Variables y estilos generales */
+:root {
+  --lila: #7652b8;
+  --lila-dark: #5e4197;
+  --lila-light: #eee7ff;
+  --pink: #f6e9ff;
+  --blue: #e6edff;
+  --ink: #33294a;
+  --muted: #827b95;
+  --line: #e8e0f5;
+  --white: #fff;
+  --bg: #f6f5ff;
+  --shadow: 0 12px 35px rgba(82, 59, 134, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: 'Times New Roman', serif;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+/* 2. Encabezado y navegación */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 13px max(calc((100vw - 1100px) / 2), 24px);
+  background: rgba(239, 231, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e3d8fa;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  color: var(--lila);
+  font-size: 32px;
+}
+
+.brand h1 {
+  margin: 0;
+  color: var(--lila);
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.brand p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  margin: 0;
+  line-height: 1;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: white;
+  color: var(--lila);
+}
+
+/* 3. Contenido principal y portada */
+main {
+  max-width: 1050px;
+  margin: 30px auto;
+  padding: 0 22px;
+}
+
+.hero {
+  margin-bottom: 24px;
+  padding: 38px 22px 27px;
+  border: 1px solid #e7dcfa;
+  border-radius: 22px;
+  background: linear-gradient(115deg, #f0e4ff, #e5eaff);
+  text-align: center;
+}
+
+.eyebrow,
+.kicker {
+  color: var(--lila);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.hero h2 {
+  margin: 12px 0 8px;
+  color: var(--lila-dark);
+  font-size: clamp(23px, 3vw, 32px);
+}
+
+.hero p {
+  max-width: 580px;
+  margin: 0 auto 20px;
+  color: #77708d;
+}
+
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hero-tags span {
+  padding: 7px 12px;
+  border: 1px solid #e7ddfa;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.65);
+  color: #6c5a8d;
+  font-size: 10px;
+}
+
+/* 4. Botones y paneles */
+.button {
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 10px;
+  font: 600 12px 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.primary {
+  background: linear-gradient(120deg, #9c7be0, #7489e5);
+  box-shadow: 0 5px 13px #8a73e533;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #e4d8fa;
+  background: #f0eaff;
+  color: var(--lila-dark);
+}
+
+.panel {
+  margin-bottom: 24px;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 5px 0;
+  color: var(--lila-dark);
+  font-size: 21px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.counter,
+.online {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #f4efff;
+  color: var(--lila);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.online {
+  background: #effaf4;
+  color: #39825d;
+}
+
+.online i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #48b47b;
+}
+
+/* 5. Formulario para subir prendas */
+.upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #685b82;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.field input,
+.field select,
+.chat-form input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  outline: none;
+  border: 1px solid #e6def4;
+  border-radius: 10px;
+  background: #fcfbff;
+  color: var(--ink);
+  font: 400 12px 'Poppins', sans-serif;
+}
+
+.field input:focus,
+.field select:focus,
+.chat-form input:focus {
+  border-color: #a18add;
+  box-shadow: 0 0 0 3px #eee7ff;
+}
+
+.file-field input {
+  padding: 8px;
+}
+
+.file-field small {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.upload-button {
+  align-self: end;
+  min-height: 42px;
+}
+
+.notice {
+  margin: 15px 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* 6. Tarjetas de prendas */
+.garment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.garment-card {
+  position: relative;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #e9e1f6;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fff, #f9f7ff);
+}
+
+.garment-card img {
+  width: 100%;
+  height: 150px;
+  border-radius: 9px;
+  background: #f0edf7;
+  object-fit: contain;
+}
+
+.garment-card h3 {
+  margin: 9px 0 3px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.garment-card .meta {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mini-btn {
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: #eee7ff;
+  color: var(--lila-dark);
+  font: 500 10px 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+.mini-btn.danger {
+  background: #fff0f2;
+  color: #a54b62;
+}
+
+/* 7. Mensajes cuando no hay contenido */
+.empty-state {
+  margin-top: 12px;
+  padding: 30px 15px;
+  border: 1px dashed #ded3f1;
+  border-radius: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.empty-state > span {
+  display: block;
+  color: #a48bdc;
+  font-size: 26px;
+}
+
+.empty-state strong {
+  display: block;
+  margin: 5px;
+  color: #6b5a8c;
+}
+
+.empty-state p {
+  margin: 5px;
+  font-size: 11px;
+}
+
+.empty-state.compact {
+  padding: 20px;
+}
+
+/* 8. Chat interactivo */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 300px;
+  overflow: auto;
+  padding: 16px;
+  border: 1px solid #eee7fa;
+  border-radius: 15px;
+  background: #fbfaff;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  max-width: 88%;
+}
+
+.message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  display: grid;
+  flex: 0 0 30px;
+  place-items: center;
+  height: 30px;
+  border-radius: 10px;
+  background: #e8ddff;
+  color: var(--lila);
+  font-weight: 700;
+}
+
+.user .avatar {
+  background: #dfe7ff;
+  color: #596ec0;
+}
+
+.bubble {
+  padding: 11px 13px;
+  border: 1px solid #ebe3f7;
+  border-radius: 4px 14px 14px 14px;
+  background: white;
+  box-shadow: 0 3px 10px #55417a08;
+  font-size: 12px;
+}
+
+.user .bubble {
+  border-color: #e1d5fa;
+  border-radius: 14px 4px 14px 14px;
+  background: #eee7ff;
+}
+
+.bubble p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+.time {
+  color: #a19ab0;
+  font-size: 9px;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 13px 0;
+}
+
+.suggestion {
+  padding: 8px 11px;
+  border: 1px solid #e4d8f6;
+  border-radius: 20px;
+  background: #faf7ff;
+  color: #78639c;
+  font: 400 10px 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+.chat-form {
+  display: flex;
+  gap: 9px;
+}
+
+.chat-form input {
+  flex: 1;
+}
+
+.small-note {
+  margin: 11px 0 0;
+  color: #9991a9;
+  font-size: 10px;
+}
+
+/* 9. Collage de outfits */
+.outfit-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.outfit-collage figure {
+  margin: 0;
+  padding: 7px;
+  border: 1px solid #e7def7;
+  border-radius: 10px;
+  background: #f4f0ff;
+  text-align: center;
+}
+
+.outfit-collage img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+}
+
+.outfit-collage figcaption {
+  color: #6b5a8c;
+  font-size: 10px;
+}
+
+.chat-outfit {
+  max-width: 100%;
+}
+
+.chat-outfit .outfit-collage img {
+  height: 105px;
+}
+
+/* 10. Outfits guardados */
+.looks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.look-card {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fdfcff;
+}
+
+.look-card h3 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.look-card p {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.look-thumbs {
+  display: flex;
+  gap: 5px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.look-thumbs img {
+  width: 60px;
+  height: 65px;
+  border-radius: 7px;
+  background: #f0edf7;
+  object-fit: contain;
+}
+
+/* 11. Historial */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #eee8f8;
+  border-radius: 12px;
+}
+
+.history-item img {
+  width: 55px;
+  height: 58px;
+  border-radius: 8px;
+  background: #f0edf7;
+  object-fit: contain;
+}
+
+.history-item div {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-item strong {
+  font-size: 12px;
+}
+
+.history-item p {
+  margin: 3px 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.history-item time {
+  color: #9a8bb5;
+  font-size: 10px;
+}
+
+/* 12. Pie de página y notificaciones */
+footer {
+  padding: 23px 10px;
+  background: #eee7ff;
+  color: #8e83a5;
+  font-size: 10px;
+  text-align: center;
+}
+
+footer strong {
+  color: var(--lila);
+  letter-spacing: 2px;
+}
+
+.toast {
+  position: fixed;
+  z-index: 10;
+  bottom: 20px;
+  left: 50%;
+  max-width: 90vw;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #372a51;
+  color: white;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
+  transition: 0.25s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* 13. Diseño adaptable para celulares */
+@media (max-width: 700px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 18px;
+  }
+
+  nav {
+    gap: 2px;
+  }
+
+  nav a {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  main {
+    margin: 17px auto;
+    padding: 0 12px;
+  }
+
+  .panel {
+    padding: 17px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .upload-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-button {
+    width: 100%;
+  }
+
+  .garment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .garment-card img {
+    height: 130px;
+  }
+
+  .looks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .message {
+    max-width: 96%;
+  }
+
+  .chat-window {
+    height: 330px;
+  }
+
+  .counter {
+    align-self: flex-start;
+  }
+}
+
+
+/* Mantener el menú alineado y con los colores de LOFESTYLE */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav a,
+.nav a:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  margin: 0;
+  color: #7652b8;
+  text-decoration: none;
+  line-height: 1;
+  border-radius: 24px;
+}
+
+.nav a:hover {
+  color: #5e4197;
+  background-color: #f0e8ff;
+}
+
+.nav a.active,
+.nav a[aria-current="page"] {
+  color: #7652b8;
+  background-color: #ffffff;
+}

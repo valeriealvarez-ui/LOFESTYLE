@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eee7ff">
+  <title>LOFESTYLE | Tu estilo, tu esencia</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div>
+        <h1>•┈┈┈┈୨♡ LOFESTYLE ♡ ୧┈┈┈┈•</h1>
+        <p>Tu estilo, tu esencia</p>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#chat">ꕤ Chat de Moda</a>
+      <a href="#armario">𑣲 Mi Armario</a>
+      <a href="#historial">✩ Historial</a>
+      <a href="#looks">❀ Mis Outfits</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="kicker">TU ESTILO, TU ESENCIA</span>
+      <h2>¡Bienvenida a tu Mundo de Moda!</h2>
+      <p>Sube tus prendas, conversa con tu asistente y descubre nuevas combinaciones.</p>
+      <a class="button primary" href="#chat">Comenzar</a>
+      <div class="hero-tags">
+        <span>Outfits personalizados</span>
+        <span>♡ Tu Armario Digital</span>
+      </div>
+    </section>
+
+    <section class="panel" id="armario">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">01 · TU COLECCIÓN</span>
+          <h2>Mi Armario Virtual</h2>
+          <p>Guarda las fotos de tu ropa y organiza cada prenda.</p>
+        </div>
+        <span class="counter" id="counter">0 / 20 prendas</span>
+      </div>
+
+      <form id="uploadForm" class="upload-grid">
+        <label class="field">
+          Nombre de la prenda
+          <input id="garmentName" maxlength="60" placeholder="Ej. Blusa lila" required>
+        </label>
+
+        <label class="field">
+          Categoría
+          <select id="garmentCategory" required>
+            <option value="Blusas">Blusas</option>
+            <option value="Pantalones">Pantalones</option>
+            <option value="Faldas">Faldas</option>
+            <option value="Vestidos">Vestidos</option>
+            <option value="Chaquetas">Chaquetas</option>
+            <option value="Zapatos">Zapatos</option>
+            <option value="Accesorios">Accesorios</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </label>
+
+        <label class="field">
+          Color
+          <input id="garmentColor" maxlength="35" placeholder="Ej. Negro">
+        </label>
+
+        <label class="field file-field">
+          Foto de la prenda
+          <input id="garmentPhoto" type="file" accept="image/jpeg,image/png,image/webp,image/gif" required>
+          <small>JPG, PNG, WEBP o GIF · máximo 8 MB</small>
+        </label>
+
+        <button class="button primary upload-button" id="uploadButton" type="submit">
+          ＋ Agregar prenda
+        </button>
+      </form>
+
+      <div class="notice" id="storageNotice" role="status">
+        Preparando almacenamiento local...
+      </div>
+
+      <div id="wardrobeGrid" class="garment-grid"></div>
+
+      <div id="emptyWardrobe" class="empty-state">
+        <span>♡</span>
+        <strong>Tu Armario Empieza Aquí</strong>
+        <p>Agrega una foto de tu primera prenda para comenzar.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="chat">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">02 · TU ASESORA PERSONAL</span>
+          <h2>Asistente de Moda</h2>
+          <p>Cuéntame qué necesitas y te propongo una combinación con tus prendas.</p>
+        </div>
+        <span class="online"><i></i> Lista para ayudarte</span>
+      </div>
+
+      <div class="chat-window" id="chatWindow" aria-live="polite">
+        <div class="message assistant">
+          <div class="avatar">L</div>
+          <div class="bubble">
+            <strong>¡Hola! Soy LOFESTYLE </strong>
+            <p>Primero agrega tus prendas al armario y después dime qué outfit quieres crear. Te ayudaré a combinar las fotos que guardes.</p>
+            <span class="time">Ahora</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="suggestions">
+        <button type="button" class="suggestion">Un outfit casual para hoy</button>
+        <button type="button" class="suggestion">Un look elegante para una fiesta</button>
+        <button type="button" class="suggestion">Combina mis prendas negras</button>
+      </div>
+
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" maxlength="500" placeholder="Ej. Crea un outfit cómodo para la universidad..." autocomplete="off" required>
+        <button class="button primary" type="submit">Enviar</button>
+      </form>
+
+      <p class="small-note">
+        El asistente crea combinaciones con las prendas guardadas. No utiliza una IA externa para generar imágenes.
+      </p>
+    </section>
+
+    <section class="panel" id="looks">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">03 · COMBINACIONES</span>
+          <h2>Mis Outfits</h2>
+          <p>Los looks que generes quedarán guardados aquí.</p>
+        </div>
+      </div>
+
+      <div id="looksGrid" class="looks-grid"></div>
+
+      <div id="emptyLooks" class="empty-state compact">
+        <strong>Todavía no hay outfits</strong>
+        <p>Usa el chat para crear tu primera combinación.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="historial">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">04 · REGISTRO</span>
+          <h2>Historial de prendas</h2>
+          <p>Consulta cuándo agregaste prendas y creaste outfits.</p>
+        </div>
+        <button class="button secondary" id="exportBtn" type="button">
+          Exportar historial
+        </button>
+      </div>
+
+      <div id="historyList" class="history-list"></div>
+
+      <div id="emptyHistory" class="empty-state compact">
+        <span>↺</span>
+        <strong>Tu historial aparecerá aquí</strong>
+        <p>Cuando agregues prendas o crees outfits, guardaremos el registro.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>LOFESTYLE</strong>
+    <p>Tu estilo, tu esencia ♡</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
